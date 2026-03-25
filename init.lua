@@ -26,17 +26,17 @@ require("lazy").setup({
 })
 
 -- resize keymaps
-vim.keymap.set("n", "<C-A-Up>", ":resize -2<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-A-Down>", ":resize +2<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-A-Left>", ":vertical resize -2<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-A-Right>", ":vertical resize +2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-Up>", ":resize -2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-Down>", ":resize +2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-Left>", ":vertical resize -2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-Right>", ":vertical resize +2<CR>", { noremap = true, silent = true })
 
 -- editor keymaps
 vim.keymap.set("n", "<C-s>", ":w<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { noremap = true })
 
 -- buffer keymaps
-vim.keymap.set("n", "<leader>c", ":close<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>q", ":bp|bd#<CR>", { noremap = true, silent = true, desc = "Close buffer" })
 
 vim.g.moonflyTransparent = true
 vim.cmd("colorscheme moonfly")

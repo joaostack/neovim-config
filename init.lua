@@ -46,6 +46,6 @@ vim.keymap.set("n", "<A-j>", "<cmd>m .+1<CR>==")
 vim.keymap.set("n", "<A-k>", "<cmd>m .-2<CR>==")
 
 -- buffer keymaps
-vim.api.nvim_set_keymap("n", "<Leader>q", ":bd|bp|bd#<CR>", { noremap = true, silent = true, desc = "Close buffer" })
+vim.api.nvim_set_keymap("n", "<Leader>q", ":bd|bp<CR>", { noremap = true, silent = true, desc = "Close buffer" })
 
 vim.cmd("colorscheme base16-ia-dark")

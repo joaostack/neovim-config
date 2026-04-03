@@ -1,7 +1,8 @@
 # neovim-config
-Configuração básica para neovim
+<img width="779" height="472" alt="demo" src="https://github.com/user-attachments/assets/000863b3-1313-4e59-a84e-ca087d779e6a" />
 
-Instalação no Linux
+
+## Instalação no Linux
 
 ```
 git clone https://github.com/joaostack/neovim-config ~/.config/nvim

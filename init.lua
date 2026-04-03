@@ -22,7 +22,6 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
-	--checker = { enabled = true },
 })
 
 -- resize keymaps
@@ -31,12 +30,22 @@ vim.keymap.set("n", "<A-Down>", ":resize +2<CR>", { noremap = true, silent = tru
 vim.keymap.set("n", "<A-Left>", ":vertical resize -2<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<A-Right>", ":vertical resize +2<CR>", { noremap = true, silent = true })
 
+-- explorer
+vim.keymap.set("n", "<leader>e", "<Cmd>:NvimTreeToggle<CR>", { desc = "Toggle nvim tree" })
+
 -- editor keymaps
 vim.keymap.set("n", "<C-s>", ":w<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { noremap = true })
+-- move between buffers
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
+-- move lines
+vim.keymap.set("n", "<A-j>", "<cmd>m .+1<CR>==")
+vim.keymap.set("n", "<A-k>", "<cmd>m .-2<CR>==")
 
 -- buffer keymaps
-vim.api.nvim_set_keymap("n", "<Leader>q", ":bp|bd#<CR>", { noremap = true, silent = true, desc = "Close buffer" })
+vim.api.nvim_set_keymap("n", "<Leader>q", ":bd|bp|bd#<CR>", { noremap = true, silent = true, desc = "Close buffer" })
 
-vim.g.moonflyTransparent = true
-vim.cmd("colorscheme moonfly")
+vim.cmd("colorscheme base16-ia-dark")

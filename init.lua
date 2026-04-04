@@ -48,4 +48,15 @@ vim.keymap.set("n", "<A-k>", "<cmd>m .-2<CR>==")
 -- buffer keymaps
 vim.api.nvim_set_keymap("n", "<Leader>q", ":bd|bp<CR>", { noremap = true, silent = true, desc = "Close buffer" })
 
+-- transparency
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = function()
+		local hl_groups = { "Normal", "NormalNC", "NormalFloat", "FloatBorder", "SignColumn" }
+		for _, group in ipairs(hl_groups) do
+			vim.api.nvim_set_hl(0, group, { bg = "none" })
+		end
+	end,
+})
+
 vim.cmd("colorscheme base16-ia-dark")

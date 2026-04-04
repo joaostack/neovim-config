@@ -11,6 +11,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.wrap = true
 vim.opt.breakindent = true
 vim.opt.termguicolors = true
+vim.opt.signcolumn = "no"
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"

@@ -1,6 +1,5 @@
 # neovim-config
-<img width="779" height="472" alt="demo" src="https://github.com/user-attachments/assets/000863b3-1313-4e59-a84e-ca087d779e6a" />
-
+<img width="1920" height="1000" alt="Screenshot_20260404_195415" src="https://github.com/user-attachments/assets/4cf2f091-2247-48f6-a287-71fb22dbd510" />
 
 ## Instalação no Linux
 

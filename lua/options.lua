@@ -1,3 +1,4 @@
+-- generic
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.number = true
@@ -13,9 +14,9 @@ vim.opt.breakindent = true
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "no"
 
+-- global
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.netrw_banner = 0

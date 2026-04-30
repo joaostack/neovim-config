@@ -55,14 +55,37 @@ vim.api.nvim_set_keymap("n", "<Leader>q", ":bd|bp<CR>", { noremap = true, silent
 vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
 	callback = function()
-		local hl_groups = { "Normal", "NormalNC", "NormalFloat", "FloatBorder", "SignColumn" }
+		local hl_groups = {
+            "Normal",
+                "NormalNC",
+                "Comment",
+                "Constant",
+                "Special",
+                "Identifier",
+                "Statement",
+                "PreProc",
+                "Type",
+                "Underlined",
+                "Todo",
+                "String",
+                "Function",
+                "Conditional",
+                "Repeat",
+                "Operator",
+                "Structure",
+                "LineNr",
+                "NonText",
+                "SignColumn",
+                "CursorLine",
+                "CursorLineNr",
+                "StatusLine",
+                "StatusLineNC",
+                "EndOfBuffer",
+        }
 		for _, group in ipairs(hl_groups) do
 			vim.api.nvim_set_hl(0, group, { bg = "none" })
 		end
 	end,
 })
-
--- remove margin
-
 
 vim.cmd("colorscheme base16-ia-dark")

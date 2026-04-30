@@ -62,4 +62,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 	end,
 })
 
+-- remove margin
+
+
 vim.cmd("colorscheme base16-ia-dark")

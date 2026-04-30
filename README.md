@@ -7,8 +7,18 @@
 git clone https://github.com/joaostack/neovim-config ~/.config/nvim
 ```
 
+## Instalação no Windows (Powershell)
+```
+git clone https://github.com/joaostack/neovim-config $ENV:LOCALAPPDATA/nvim
+```
+
 ```
 nvim
+```
+
+## Update
+```
+:Lazy sync
 ```
 
 O servidor LSP para C# vem pré instalado, caso queira remover, delete os seguintes arquivos:\

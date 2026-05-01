@@ -75,4 +75,4 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 	end,
 })
 
-vim.cmd("colorscheme base16-ia-dark")
+vim.cmd("colorscheme base16-catppuccin-mocha")

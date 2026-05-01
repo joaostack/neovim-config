@@ -5,11 +5,11 @@ return {
 	opts = {
 		options = {
 			mode = "buffer",
-			separator_style = "slant",
+			separator_style = "think",
 			show_buffer_close_icons = true,
 			show_close_icon = true,
 			show_buffer_icons = true,
-			color_icons = false,
+			color_icons = true,
 			always_show_bufferline = true,
 		},
 	},

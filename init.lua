@@ -97,6 +97,6 @@ vim.diagnostic.config({
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "LSP Diagnostics" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-vim.keymap.set("n", "<leader>c", vim.diagnostic.setloclist, { desc = "Close float window" })
+vim.keymap.set("n", "<leader>l", vim.diagnostic.setloclist, { desc = "LSP" })
 
 vim.cmd("colorscheme catppuccin")

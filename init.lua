@@ -79,7 +79,11 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
 -- lsp diagnostics
 vim.diagnostic.config({
-	virtual_text = true,
+	virtual_text = {
+		spacing = 4,
+		source = "if_many",
+		prefix = "●",
+	},
 	signs = true,
 	underline = true,
 	update_in_insert = false,

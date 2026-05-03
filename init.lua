@@ -56,23 +56,45 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
 	callback = function()
 		local hl_groups = {
-            "Normal",
-                "NormalNC",
-                "Identifier",
-                "PreProc",
-                "Todo",
-                "LineNr",
-                "SignColumn",
-                "CursorLine",
-                "CursorLineNr",
-                "StatusLine",
-                "StatusLineNC",
-                "EndOfBuffer",
-        }
+			"Normal",
+			"NormalNC",
+			"Identifier",
+			"PreProc",
+			"Todo",
+			"LineNr",
+			"SignColumn",
+			"CursorLine",
+			"CursorLineNr",
+			"StatusLine",
+			"StatusLineNC",
+			"EndOfBuffer",
+		}
 		for _, group in ipairs(hl_groups) do
 			vim.api.nvim_set_hl(0, group, { bg = "none" })
 		end
 	end,
 })
 
-vim.cmd("colorscheme base16-catppuccin-mocha")
+-- lsp diagnostics
+vim.diagnostic.config({
+	virtual_text = true,
+	signs = true,
+	underline = true,
+	update_in_insert = false,
+	severity_sort = true,
+	float = {
+		focused = false,
+		style = "minimal",
+		border = "rounded",
+		source = "always",
+		header = "",
+		prefix = "",
+	},
+})
+
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
+
+vim.cmd("colorscheme base16-irblack")

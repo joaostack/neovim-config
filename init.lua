@@ -68,6 +68,8 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 			"StatusLine",
 			"StatusLineNC",
 			"EndOfBuffer",
+			"NormalFloat",
+			"FloatBorder",
 		}
 		for _, group in ipairs(hl_groups) do
 			vim.api.nvim_set_hl(0, group, { bg = "none" })
@@ -92,7 +94,7 @@ vim.diagnostic.config({
 	},
 })
 
-vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "LSP Diagnostics" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)

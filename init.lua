@@ -80,22 +80,54 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 -- lsp diagnostics
 vim.diagnostic.config({
 	virtual_text = {
-		spacing = 4,
+		spacing = 2,
 		source = "if_many",
 		prefix = "●",
+
+		severity = {
+			min = vim.diagnostic.severity.WARN,
+		},
 	},
-	signs = true,
-	underline = true,
+
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = " ",
+			[vim.diagnostic.severity.WARN] = " ",
+			[vim.diagnostic.severity.INFO] = " ",
+			[vim.diagnostic.severity.HINT] = "󰌵 ",
+		},
+	},
+
+	underline = {
+		severity = {
+			min = vim.diagnostic.severity.WARN,
+		},
+	},
+
 	update_in_insert = false,
 	severity_sort = true,
+
 	float = {
-		focused = false,
+		focusable = false,
 		style = "minimal",
 		border = "rounded",
-		source = "always",
+		source = "if_many",
 		header = "",
 		prefix = "",
+
+		close_events = {
+			"BufLeave",
+			"CursorMoved",
+			"InsertEnter",
+			"FocusLost",
+		},
 	},
+
+	jump = {
+		float = true,
+	},
+
+	virtual_lines = false,
 })
 
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "LSP Diagnostics" })
